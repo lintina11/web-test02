@@ -127,7 +127,7 @@ header .menu a:hover{
 
 
 .concept{
-    padding: 10% 0;
+    padding: 5% 0;
 }
 .concept .container{
     width: 80%;
@@ -296,7 +296,9 @@ header .menu a:hover{
     margin: 1em 0;
 }
 
-
+.story{
+    padding-top: 5%;
+}
 .story .story-slogan{
     width: 80%;
     height: 25vh;
@@ -414,7 +416,6 @@ header .menu a:hover{
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 .story .year-card-txt:before{
     content: '';
