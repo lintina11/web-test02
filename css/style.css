@@ -1,0 +1,664 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+body{
+    scroll-behavior: smooth;
+}
+h2{
+    color: #79840F;
+    font-size: 1.4em;
+    font-weight: 100;
+    font-style: italic;
+    letter-spacing: .2em;
+    margin: 10% 0;
+    position: relative;
+    text-align: center;
+    /* outline: 1px solid red; */
+}
+h2::before{
+    content: '';
+    width: 90%;
+    height: 1px;
+    background-image: linear-gradient(90deg, #79840F 30%,transparent 30%,transparent 70%, #79840F 70%);
+    position: absolute;
+    top:50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+a{
+    text-decoration: none;
+}
+button:focus{
+    outline: none;
+}
+
+/* 選單列 */
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 10;
+}
+header .shopping-bag-icon{
+    display: inline-block;
+    width:25px;
+    height: 25px;
+    border: 1px solid #eee;
+    border-radius: 50%;
+}
+header .shopping-bag-icon img{
+    width: 60%;
+    padding: 10% 20%;
+    fill:#eee;
+}
+header .fa-bars{
+    font-size: 26px;
+    color: #eee;
+}
+header .shopping-bag-icon, header .menu{
+    margin: 1em .5em;
+    /* outline: 1px solid red; */
+} 
+header .menu a{
+    display: none;
+    margin: 2em auto;
+    color: #ddd;
+    /* outline: 1px solid red; */
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+header .menu a.show{
+    display: block;
+}
+header .menu a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+/* banner */
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(45deg,#2D3D5A,#090E16) fixed;
+}
+.banner .kv{
+    width: 80%;
+    height: 80vh;
+    background: url(../pic/kv-mobile.png) center center/ cover;
+}
+.banner .title-area{
+    color: #fff;
+    text-align: center;
+    width: 75%;
+    box-sizing: border-box;
+    padding-top: 10vh;
+    background-color: rgba(0,0,0,.4);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    margin: auto;
+    border: 2px solid transparent;
+    border-image: url(../pic/main-title-border.png) 1% stretch;
+}
+.banner .title-area h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.banner .title-area p{
+    font-size: 0.8em;
+}
+.banner button{
+    color: #eee;
+    font-weight: 500;
+    letter-spacing: .2em;
+    width: 100%;
+    margin: 10vmin 0;
+    line-height: 3;
+    background: linear-gradient(#3B527B, #283853);
+    border: none;
+}
+
+
+.concept{
+    padding: 10% 0;
+}
+.concept .container{
+    width: 80%;
+    margin: auto;
+}
+.concept .pic{
+  margin: 15% auto 5%;
+  box-shadow: -1em -1em 0 #C0D219aa;  
+}
+.concept .pic img{
+    width: 100%;
+}
+.concept .txt{
+    box-sizing: border-box;
+    padding: 1em 2em 2em 2em;
+    box-shadow: 3px 3px 10px rgba(204,204,204,.5);
+}
+.concept .txt h4{
+    font-size: 1.2em;
+    font-style: italic;
+    letter-spacing: .1em;
+    color: #79840F;
+    padding-bottom: 1em;
+}
+
+
+.store{
+    background-color: #1A2436;
+    padding: 5% 0;
+}
+.store h2{
+    color: #eee;
+}
+.store h2::before{
+    background-image: linear-gradient(90deg, #eee 30%,transparent 30%,transparent 70%, #eee 70%);
+}
+.store .store-select-group{
+    width: 80%;
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.store .store-select-group .store-select{
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 900;
+    text-align: center;
+    line-height: 22vw;
+    width: 22vw;
+    height: 22vw;
+    margin-bottom: 5%;
+    border: .2px solid #fff;
+    border-radius: 50%;
+    background: url(../pic/store-select.jpg) center center / 100% 100%;
+    
+}
+.store .store-select-group .store-select:hover{
+    box-shadow: 0 0 5px #C0D219;
+}
+.store .product-group{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.store .product{
+    width: 48%;
+    background-color: #fff;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+}
+.store .product .pic{
+    width: 100%;
+}
+.store .product .pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+.store .product .info{
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+}
+.store .product .info h4{
+    color: #79840F;
+}
+.store .product .info p{
+    color: #555;
+}
+.store .product .info .footer{
+    margin-top: 20%;
+}
+.store .product .info .price{
+    color: #C0D219;
+    font-weight: 900;
+    float: left;
+}
+.store .button-group{
+    float: right;
+}
+.store .button-group a{
+    display: inline-block;
+    width: 5vmin;
+    height: 5vmin;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px #79840F;
+    border-radius: 50%;
+    position: relative;
+}
+.store .button-group a img{
+    width: 60%;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+}
+.see-more-button button{
+    display: block;
+    width: 80%;
+    margin: 5% auto;
+    color: #C0D219;
+    font-size: 1.2em;
+    font-weight: 900;
+    letter-spacing: .2em;
+    line-height: 2.5;
+    background-color: transparent;
+    border: 1px solid #C0D219;
+    transition: .5s;
+}
+.see-more-button button:hover{
+    color: #1A2436;
+    background-color: #C0D219;
+}
+
+
+.notice{
+    padding: 5% 0;
+}
+.notice .container{
+    width: 80%;
+    margin: auto;
+}
+.notice h3{
+    color: #79840F;
+    letter-spacing: .1em;
+}
+.notice .item{
+    color: #555;
+    padding: 1em 0;
+    border-bottom: 1px solid #ddd;
+}
+.notice .item h4{
+    float: left;
+}
+.notice .item .date{
+    float: right;
+    font-size: .9em;
+}
+.notice .item p:last-child{
+    clear: both;
+    font-size: .9em;
+    margin: 1em 0;
+}
+
+
+.story .story-slogan{
+    width: 80%;
+    height: 25vh;
+    margin: 0 auto 10%;
+    /* background-color: #eee; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.story .story-slogan::before,.story .story-slogan::after{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 15%;
+}
+.story .story-slogan::before{
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    top: 0;
+    right: 0;
+}
+.story .story-slogan::after{
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    bottom: 0;
+    left: 0;
+}
+.story .story-slogan h5{
+    color: #aaa;
+    font-weight: 100;
+    font-size: .9em;
+    font-style: italic;
+    line-height: 1.5;
+    text-shadow: 0 3px 6px rgba(0,0,0,.15);
+    padding: 0 1em;
+    /* outline: 1px solid red; */
+}
+.story .year-card-group{
+    width: 80%;
+    margin: auto;
+}
+.story .year-card{
+    height: 22vh;
+    margin-bottom: 7%;
+    position: relative;
+    /* border-radius: 12% / 50%; */
+}
+.story .year-card::after{
+    content: '';
+    width: 80px;
+    height: 10px;
+    background-color:  #C0D219cc;
+    transform: skew(-30deg);
+    position: absolute;
+}
+.story .year-card-group .year-card:nth-child(1)::after{
+    bottom: 10px;
+    right: 0;
+}
+.story .year-card-group .year-card:nth-child(2)::after{
+    background-color:  #D2B919cc;
+    bottom: 2px;
+    left: 10%;
+}
+.story .year-card-group .year-card:nth-child(3)::after{
+    background-color:  #19B9D2cc;
+    bottom: -15%;
+    right: 10%;
+}
+.story .year-card .year-card-number{
+    color: #aaa;
+    font-size: 1.5em;
+    font-style: italic;
+    width: 22vw;
+    height: 22vw;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    text-align: center;
+    line-height: 22vw;
+    position: absolute;
+    top:0; bottom: 0;
+    margin: auto;
+    transform: translateX(-35%);
+}
+.story .year-card .year-card-number::after{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid #C0D219;
+    border-bottom: 1px solid #C0D219;
+    top: 0; bottom: 0;
+    margin: auto;
+    right: -35%;
+    transform: rotate(-45deg);
+}
+.story .year-card:nth-child(2) .year-card-number:after{
+    border-right: 1px solid #D2B919;
+    border-bottom: 1px solid #D2B919;
+}
+.story .year-card:nth-child(3) .year-card-number:after{
+    border-right: 1px solid #19B9D2;
+    border-bottom: 1px solid #19B9D2;
+}
+.story .year-card .year-card-txt{
+    color: #fff;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    /* outline: 1px solid red; */
+    padding-left: 40%;
+    padding-right: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.story .year-card-txt:before{
+    content: '';
+    width: 80vmin;
+    height: 80vmin;
+    background-color: #1A2436;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;bottom: 0;
+    right: 0;left: 0;
+    margin: auto;
+    z-index: -1;
+}
+.story .year-card .year-card-txt h4{
+    line-height: 2;
+}
+.story .year-card .year-card-txt p{
+    font-size: .9em;
+    font-weight: 100;
+}
+
+
+.follow{
+    background-color: #1A2436;
+    padding: 5% 0 10%;
+}
+.follow h2{
+    color: #eee;
+}
+.follow h2::before{
+    background-image: linear-gradient(90deg, #eee 30%,transparent 30%,transparent 70%, #eee 70%);
+}
+.follow .social-group{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.follow .social{
+    width: 30%;
+    /* outline: 1px solid red; */
+    border: 1px solid #eee;
+    padding: 5%;
+    box-sizing: border-box;
+}
+.follow .social:hover{
+    background-color: #C0D21933 ;
+}
+.follow .social img{
+    width: 100%;
+}
+.about{
+    margin-bottom: 5vh;
+}
+.about .container{
+    background: linear-gradient(110deg,transparent 40%, #fff 40%),url(../pic/about.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 3em 0;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 20vh;
+}
+.about .txt{
+    width: 50%;
+    padding-right: 1em;
+}
+.about h4{
+    font-weight: normal;
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 0;
+}
+.about h4::before{
+    content: '';
+    width: 8vw;
+    height: 8vw;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    background-color: #C0D219;
+    z-index: -1;
+
+}
+.about p{
+    font-size: .8em;
+    font-weight: 100;
+    font-style: italic;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+.about a{
+    display: block;
+    width: 40%;
+    color: #C0D219;
+    background-color: #fff;
+    border: 1px solid #C0D219;
+    line-height: 1.5;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    transition: .5s;
+}
+.about a:hover{
+    color: #fff;
+    background-color: #C0D219;
+}
+
+footer{
+    color: #ccc;
+    text-align: center;
+    background-color: #222;
+}
+
+/* 手機橫向+ipad */
+@media screen and (min-width:768px){
+    .banner .title-area h1{
+        font-size: 5em;
+    }
+    .banner .title-area p{
+        font-size: 1.5em;
+    }
+    .banner button{
+        font-size: 2em;
+    }
+    
+    .store .store-select-group .store-select{
+        font-size: 2em;
+    }
+    .story .year-card .year-card-txt h4{
+        font-size: 1.2em;
+    }
+    .story .year-card .year-card-txt p{
+        font-size: 1em;
+    }
+    .about h4{
+        font-size: 1.2em;
+    }
+    .about p{
+        font-size: 1em;
+    }
+}
+/* 桌機版 */
+@media screen and (min-width:1200px){
+    header{
+        flex-direction: row-reverse;
+    }
+    header .fa-bars{
+       display: none;
+    }
+    header .menu a{
+        display: inline-block;
+        margin: auto 1em;
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+    }
+
+    .banner .kv{
+        background: url(../pic/kv-desttop.jpg) center center/ cover;
+    }
+
+    .banner .title-area{
+        width: 50%;
+    }
+    .concept{
+        padding: 0;
+        padding-bottom: 10%;
+    }
+    .concept .container{
+        display: flex;
+        align-items: center;
+    }
+    .concept .pic, .concept .txt{
+        width: 45%;
+    }
+    .concept .pic{
+        margin: auto;
+    }
+
+
+    .store .store-select-group .store-select{
+        line-height: 11vw;
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .store .product{
+        display: flex;
+        flex-direction: row;
+    }
+    .store .product .pic{
+        width: 50%;
+    }
+    .store .product .info{
+        padding: 1em;
+    }
+    .store .product .info .footer{
+        margin-top: auto;
+    }
+    .see-more-button button{
+        width: 25%;
+    }
+
+    .story .story-slogan{
+        width: 50%;
+    }
+    .story .story-slogan h5{
+        font-size: 1.2em;
+    }
+
+    .story .year-card-group{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .story .year-card{
+        width: 25vw;
+        height: 25vh;
+        margin-bottom: 7%;
+        position: relative;
+        /* border-radius: 12% / 50%; */
+    }
+    .story .year-card .year-card-number{
+        width: 12vmin;
+        height: 12vmin;
+        line-height: 12vmin;
+    }
+    .story .year-card-txt:before{
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .follow .social-group{
+        width: 50%;
+    }
+    .follow .social{
+        width: 20%;
+    }
+    .about .container{
+        height: 30vh;
+    }
+
+}
