@@ -428,7 +428,7 @@ header .menu a:hover{
     right: 0;left: 0;
     margin: auto;
     z-index: -1;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
 }
 .story .year-card .year-card-txt h4{
     line-height: 2;
